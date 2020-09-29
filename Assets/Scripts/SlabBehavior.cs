@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class SlabBehavior : MonoBehaviour
 {
-    private GameObject _slab;
-    private float _velocityX;
+    private GameObject _slab; 
+    public float velocityX;
 
     
     
@@ -12,18 +12,18 @@ public class SlabBehavior : MonoBehaviour
     void Start()
     {
         _slab = gameObject;
-        _velocityX = MathUtils.GetRandomFloat(-3, 3);
+        velocityX = MathUtils.GetRandomFloat(-3, 3);
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        _slab.transform.Translate(_velocityX*Time.deltaTime,0,0);
-
+        _slab.transform.Translate(velocityX*Time.deltaTime,0,0);
     }
 
     private void OnDestroy()
     {
+        //TODO: add explosion animation
         Destroy(_slab);
     }
 

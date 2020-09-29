@@ -51,9 +51,9 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\HeroController.cs" />
     <Compile Include="Assets\Scripts\SlabBehavior.cs" />
     <Compile Include="Assets\Scripts\MathUtils.cs" />
+    <Compile Include="Assets\Scripts\HeroController.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>/Users/caitlyn/Desktop/MyUnityProjects/SpaceWar/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
