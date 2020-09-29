@@ -1,24 +1,34 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using Random = System.Random;
 
 public class SlabBehavior : MonoBehaviour
 {
-    private Rigidbody2D _slab;
+    private GameObject _slab;
     private float _velocityX;
 
+    
+    
     // Start is called before the first frame update
     void Start()
     {
-        _slab = GetComponent<Rigidbody2D>();
-        _slab.velocity = new Vector2(MathUtils.GetRandomFloat(-20,20)*Time.deltaTime,0);
+        _slab = gameObject;
+        _velocityX = MathUtils.GetRandomFloat(-3, 3);
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        //...
+        _slab.transform.Translate(_velocityX*Time.deltaTime,0,0);
+
+    }
+
+    private void OnDestroy()
+    {
+        Destroy(_slab);
+    }
+
+    private void OnBecameInvisible()
+    {
+        OnDestroy();
     }
 }

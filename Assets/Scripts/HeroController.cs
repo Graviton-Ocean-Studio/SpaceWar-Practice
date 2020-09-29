@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -22,6 +23,15 @@ public class HeroController : MonoBehaviour
         if (_rigidbody.IsTouchingLayers(LayerMask.GetMask("Slab")) && Input.GetKeyDown(KeyCode.W))
         {
             _rigidbody.AddForce(Vector2.up * 10, ForceMode2D.Impulse);
+        }
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        //set speed to slab
+        if (other.gameObject.tag.Equals("slab"))
+        {
+            //transform.Translate(gameObject. * 5 * Time.deltaTime, 0, 0);       
         }
     }
 }
